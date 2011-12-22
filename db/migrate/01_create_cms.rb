@@ -73,18 +73,19 @@ class CreateCms < ActiveRecord::Migration
     
     # -- Files --------------------------------------------------------------
     create_table :cms_files do |t|
-      t.integer :site_id,           :null => false
+      t.integer :site_id,         :null => false
       t.integer :block_id
-      t.string  :label,             :null => false
-      t.string  :file_file_name,    :null => false
-      t.string  :file_content_type, :null => false
-      t.integer :file_file_size,    :null => false
-      t.string  :description,       :limit => 2048
-      t.integer :position,          :null => false, :default => 0
+      t.string  :label,           :null => false
+      t.string  :file_uid,        :null => false
+      t.string  :file_name,       :null => false
+      t.string  :file_mime_type,  :null => false
+      t.integer :file_size,       :null => false
+      t.string  :description,     :limit => 2048
+      t.integer :position,        :null => false, :default => 0
       t.timestamps
     end
     add_index :cms_files, [:site_id, :label]
-    add_index :cms_files, [:site_id, :file_file_name]
+    add_index :cms_files, [:site_id, :file_name]
     add_index :cms_files, [:site_id, :position]
     add_index :cms_files, [:site_id, :block_id]
     

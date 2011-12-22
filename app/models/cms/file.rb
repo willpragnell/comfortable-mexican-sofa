@@ -1,3 +1,5 @@
+require 'dragonfly/rails/images'
+
 class Cms::File < ActiveRecord::Base
   
   IMAGE_MIMETYPES = %w(gif jpeg pjpeg png svg+xml tiff).collect{|subtype| "image/#{subtype}"}
@@ -11,15 +13,7 @@ class Cms::File < ActiveRecord::Base
   attr_accessor :dimensions
   
   # -- AR Extensions --------------------------------------------------------
-  has_attached_file :file, ComfortableMexicanSofa.config.upload_file_options.merge(
-    # dimensions accessor needs to be set before file assignment for this to work
-    :styles => lambda { |f|
-      (f.instance.dimensions.blank?? { } : { :original => f.instance.dimensions }).merge(
-        :cms_thumb => '80x60#'
-      )
-    }
-  )
-  before_post_process :is_image?
+  image_accessor :file
   
   # -- Relationships --------------------------------------------------------
   belongs_to :site
@@ -27,7 +21,6 @@ class Cms::File < ActiveRecord::Base
   
   # -- Validations ----------------------------------------------------------
   validates :site_id, :presence => true
-  validates_attachment_presence :file
   
   # -- Callbacks ------------------------------------------------------------
   before_save   :assign_label
@@ -36,18 +29,18 @@ class Cms::File < ActiveRecord::Base
   after_destroy :reload_page_cache
   
   # -- Scopes ---------------------------------------------------------------
-  scope :images,      where(:file_content_type => IMAGE_MIMETYPES)
-  scope :not_images,  where('file_content_type NOT IN (?)', IMAGE_MIMETYPES)
+  scope :images,      where(:file_mime_type => IMAGE_MIMETYPES)
+  scope :not_images,  where('file_mime_type NOT IN (?)', IMAGE_MIMETYPES)
   
   # -- Instance Methods -----------------------------------------------------
   def is_image?
-    IMAGE_MIMETYPES.include?(file_content_type)
+    IMAGE_MIMETYPES.include?(file_mime_type)
   end
   
 protected
   
   def assign_label
-    self.label = self.label.blank?? self.file_file_name.gsub(/\.[^\.]*?$/, '').titleize : self.label
+    self.label = self.label.blank?? self.file_name.gsub(/\.[^\.]*?$/, '').titleize : self.label
   end
   
   def assign_position
