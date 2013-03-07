@@ -8,9 +8,9 @@ module ComfortableMexicanSofa::Fixtures
   end
   
   def self.export_all(from_site, to_folder = nil)
-    export_layouts  from_site, to_folder
-    export_pages    from_site, to_folder
-    export_snippets from_site, to_folder
+    export_layouts    from_site, to_folder
+    export_pages      from_site, to_folder
+    export_snippets   from_site, to_folder
     export_categories from_site, to_folder
   end
   
