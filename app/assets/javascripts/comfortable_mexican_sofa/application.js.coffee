@@ -169,3 +169,7 @@ window.CMS.hideAdvanced = ->
 window.CMS.showAdvanced = ->
   $('.advanced').show()
   $('#advanced_button').hide()
+  path_components = CMS.current_path.split('/')
+  $.ajax
+    url: '/' + path_components[1] + '/show_advanced',
+    type: 'POST'

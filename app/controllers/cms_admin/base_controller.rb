@@ -10,22 +10,27 @@ class CmsAdmin::BaseController < ApplicationController
                 :set_locale,
                 :load_fixtures,
                 :except => :jump
-  
+
   layout 'cms_admin'
-  
+
   if ComfortableMexicanSofa.config.admin_cache_sweeper.present?
     cache_sweeper *ComfortableMexicanSofa.config.admin_cache_sweeper
   end
-  
+
   def jump
     path = ComfortableMexicanSofa.config.admin_route_redirect
     return redirect_to(path) unless path.blank?
     load_admin_site
     redirect_to cms_admin_site_pages_path(@site) if @site
   end
-  
+
+  def show_advanced
+    session[:show_advanced] = true
+    render :nothing => true
+  end
+
 protected
-  
+
   def load_admin_site
     if @site = Cms::Site.find_by_id(params[:site_id] || session[:site_id]) || Cms::Site.first
       session[:site_id] = @site.id
