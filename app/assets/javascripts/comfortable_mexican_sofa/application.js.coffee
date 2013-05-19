@@ -159,8 +159,11 @@ window.CMS.uploader = ->
 
 
 window.CMS.hideAdvanced = ->
-  $('#advanced_button').click ->
-    CMS.showAdvanced()
+  if CMS.should_show_advanced
+    $('.advanced').show()
+  else
+    $('#advanced_button').show().click ->
+      CMS.showAdvanced()
 
 
 window.CMS.showAdvanced = ->

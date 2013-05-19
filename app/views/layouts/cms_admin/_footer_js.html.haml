@@ -5,3 +5,7 @@
 - if @site && !@site.new_record?
   :javascript
     CMS.file_upload_path = "#{cms_admin_site_files_path(@site)}"
+
+- if session[:show_advanced]
+  :javascript
+    CMS.should_show_advanced = true
