@@ -39,7 +39,7 @@ fr:
         description: Description
       cms/snippet:
         identifier: Identifiant
-        
+
   # -- Controllers ----------------------------------------------------------
   cms:
     base:
@@ -53,7 +53,7 @@ fr:
       update_failure: Échec de la modification du site
       deleted: Site supprimé
       not_found: Site introuvable
-      
+
     layouts:
       created: Mise en page créée
       creation_failure: Échec de la création de la mise en page
@@ -61,7 +61,7 @@ fr:
       update_failure: Échec de la modification de la mise en page
       deleted: Mise en page supprimée
       not_found: Mise en page introuvable
-      
+
     pages:
       created: Page créée
       creation_failure: Échec de la création de la page
@@ -70,7 +70,7 @@ fr:
       deleted: Page supprimée
       not_found: Page introuvable
       layout_not_found: Aucune mise en page disponible. Créez-en une nouvelle.
-      
+
     snippets:
       created: Fragment créé
       creation_failure: Échec de la création du fragment
@@ -78,12 +78,12 @@ fr:
       update_failure: Échec de la modification du fragment
       deleted: Fragment supprimé
       not_found: Fragment introuvable
-      
+
     revisions:
       reverted: Contenu restauré
       record_not_found: Enregistrement introuvable
       not_found: Révision introuvable
-      
+
     files:
       created: Fichier téléchargé
       creation_failure: Échec du téléchargement du fichier
@@ -91,12 +91,12 @@ fr:
       update_failure: Échec de la modification du fichier
       deleted: Fichier supprimé
       not_found: Fichier introuvable
-      
+
     content:
       site_not_found: Site introuvable
       layout_not_found: Mise en page introuvable
       page_not_found: Page introuvable
-  
+
   # -- Views ----------------------------------------------------------------
   cms_admin:
     base:
@@ -105,7 +105,8 @@ fr:
       pages: Pages
       snippets: Fragments
       files: Fichiers
-      
+      show_advanced: Afficher Les Options Avancées
+
     sites:
       index:
         title: Sites
@@ -122,7 +123,7 @@ fr:
         create: Créer le site
         update: Modifier le site
         is_mirrored: En miroir
-        
+
     layouts:
       index:
         title: Mises en page
@@ -142,7 +143,7 @@ fr:
         select_app_layout: Sélectionner une mise en page de l'application
         create: Créer la mise en page
         update: Modifier la mise en page
-      
+
     pages:
       index:
         title: Pages
@@ -168,7 +169,7 @@ fr:
         no_tags: |-
           Mise en page sans aucun tag de contenu.<br/>
           Modifiez le contenu pour y ajouter un tag de page ou de champ. Exemple : <code>{{cms:page:content}}</code>
-      
+
     snippets:
       index:
         title: Fragments
@@ -184,16 +185,16 @@ fr:
       form:
         create: Créer le fragment
         update: Modifier le fragment
-          
+
     revisions:
       show:
         title: "Révisions :"
         revision: révision
-        full_path: Chemin complet 
+        full_path: Chemin complet
         slug: Identifiant
         update: Restaurer cette révision
         current: Actuel
-      
+
     files:
       index:
         title: Fichiers
@@ -214,7 +215,7 @@ fr:
         are_you_sure: Êtes-vous sûr de vouloir supprimer ce fichier ?
       file:
         are_you_sure: Êtes-vous sûr de vouloir supprimer ce fichier ?
-        
+
     categories:
       index:
         label: Catégories
@@ -228,7 +229,7 @@ fr:
         save: Enregistrer
       form:
         label: Catégories
-        
+
     dialogs:
       image:
         insert: Insérer une image

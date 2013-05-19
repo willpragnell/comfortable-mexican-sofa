@@ -105,7 +105,8 @@ es:
       pages: Páginas
       snippets: Fragmentos
       files: Archivos
-      
+      show_advanced: Mostrar Opciones Avanzadas
+
     sites:
       index:
         title: Listado de Sitios
@@ -184,7 +185,7 @@ es:
       form:
         create: Crear Fragmento
         update: Actualizar Fragmento
-        
+
     revisions:
       show:
         title: Revisiones de
@@ -193,7 +194,7 @@ es:
         slug: Identificador
         update: Actualizar a esta versión
         current: Corriente
-        
+
     files:
       index:
         title: Archivos
@@ -214,7 +215,7 @@ es:
         are_you_sure: ¿Estás seguro?
       file:
         are_you_sure: ¿Estás seguro?
-          
+
     categories:
       index:
         label: Categorias
@@ -228,7 +229,7 @@ es:
         save: Guardar
       form:
         label: Categorias
-        
+
     dialogs:
       image:
         insert: Insertar Imagen

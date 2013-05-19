@@ -39,7 +39,7 @@ zh-CN:
         description: 描述
       cms/snippet:
         identifier: 标识符
-        
+
   # -- Controllers ----------------------------------------------------------
   cms:
     base:
@@ -105,6 +105,7 @@ zh-CN:
       pages: 页面
       snippets: 片段
       files: 文件
+      show_advanced: Show Advanced Options
 
     sites:
       index:

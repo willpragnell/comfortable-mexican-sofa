@@ -105,6 +105,7 @@ ru:
       pages: Страницы
       snippets: Сниппеты
       files: Файлы
+      show_advanced: Show Advanced Options
 
     sites:
       index:
