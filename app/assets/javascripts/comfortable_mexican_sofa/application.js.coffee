@@ -160,14 +160,14 @@ window.CMS.uploader = ->
 
 window.CMS.hideAdvanced = ->
   if CMS.should_show_advanced
-    $('.advanced').show()
+    $('.advanced').removeClass('advanced')
   else
     $('#advanced_button').show().click ->
       CMS.showAdvanced()
 
 
 window.CMS.showAdvanced = ->
-  $('.advanced').show()
+  $('.advanced').removeClass('advanced')
   $('#advanced_button').hide()
   path_components = CMS.current_path.split('/')
   $.ajax
